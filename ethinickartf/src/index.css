@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 345 65% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 30 15% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 40 80% 60%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 345 65% 45%;
+
+    --radius: 0.5rem;
+    
+    /* Custom fashion theme tokens */
+    --elegant-cream: 30 25% 97%;
+    --deep-rose: 345 65% 45%;
+    --charcoal: 0 0% 15%;
+    --champagne: 40 80% 60%;
+    --soft-grey: 0 0% 45%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(345 65% 45% / 0.05), hsl(40 80% 60% / 0.05));
+    --gradient-premium: linear-gradient(180deg, hsl(30 25% 97%), hsl(0 0% 100%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 4px 24px hsl(345 65% 45% / 0.08);
+    --shadow-card: 0 2px 16px hsl(0 0% 0% / 0.06);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 345 65% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 40 80% 65%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 345 65% 55%;
+    
+    --elegant-cream: 0 0% 12%;
+    --deep-rose: 345 65% 55%;
+    --charcoal: 0 0% 95%;
+    --champagne: 40 80% 65%;
+    --soft-grey: 0 0% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .elegant-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(345_65%_45%/0.12)];
+  }
+  
+  .product-card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_hsl(0_0%_0%/0.08)];
+  }
+  
+  .smooth-fade {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
